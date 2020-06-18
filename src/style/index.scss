@@ -1,0 +1,260 @@
+$datepickerYmdWidth: 460px;
+$active-bd-color: #1673BA;
+$active-bg-color: #333;
+$border-radius: 6px;
+
+@mixin btn-animation {
+    transition: all .3s ease;
+    //bug of transitions and backface visibility
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+
+    &:hover {
+        transform: scale(.95);
+    }
+    &:active {
+        transform: scale(.86);
+    }
+    &:disabled,
+    *.is-disabled {
+        transform: none;
+    }
+}
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.ft-FlatDatePicker {
+  @include clearfix();
+  width: 320px;
+
+  &_default {
+    width: 560px;
+  }
+
+  &_Hm {
+    width: 300px;
+  }
+
+  %datepickerCompo {
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+  &__yearCompo {
+    @extend %datepickerCompo;
+  }
+
+  &__monthCompo {
+    @extend %datepickerCompo;
+  }
+
+  &__dayCompo {
+    @extend %datepickerCompo;
+  }
+  &__hourCompo {
+    @extend %datepickerCompo;
+  }
+  &__minuteCompo {
+    @extend %datepickerCompo;
+  }
+
+  &__compoTitle {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    &::after {
+      content: '';
+      flex: 1;
+      display: block;
+      margin-left: 5px;
+      height: 1;
+      position: relative;
+      top: 4px;
+      border-bottom: 1px dashed #b2b2b2;
+    }
+  }
+
+  &__compoContent {
+  }
+
+  &__optionList {
+    display: table;
+    width: 100%;
+  }
+
+  &__option {
+    @include btn-animation();
+    display: inline-block;
+    margin: 0.1em 1%;
+    text-align: center;
+    padding-top: 0.125em;
+    padding-bottom: 0.125em;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: #ededed;
+    }
+
+    &_year {
+      width: 10.5%;
+    }
+    &_month {
+      width: 23%;
+    }
+    &_day {
+      width: 12.2%;
+    }
+    &_hour {
+      width: 14.2%;
+    }
+    &_minute {
+      width: 16.66667%;
+    }
+
+    &_marked {
+      background-color: #ededed;
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+      cursor: auto;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.is-selected {
+      color: white;
+      background-color: #333;
+      border-color: #333;
+
+      &:hover {
+        color: white;
+        background-color: #333;
+        border-color: #333;
+      }
+    }
+  }
+}
+
+.ft-FlatDatePicker_ymd2 {
+  width: 460px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .ft-FlatDatePicker__yearCompo {
+    flex-basis: 100%;
+    max-width: 100%;
+    flex-shrink: 1;
+    box-sizing: border-box;
+  }
+  .ft-FlatDatePicker__monthCompo {
+    flex-basis: percentage(11 / 24);
+    max-width: percentage(11 / 24);
+    flex-shrink: 1;
+    box-sizing: border-box;
+  }
+  .ft-FlatDatePicker__dayCompo {
+    flex-basis: percentage(13 / 24);
+    max-width: percentage(13 / 24);
+    flex-shrink: 1;
+    box-sizing: border-box;
+  }
+}
+
+.ft-FlatDatePicker_ymd {
+  width: 460px;
+  @include clearfix();
+
+  .ft-FlatDatePicker__yearCompo {
+    width: 55%;
+    float: left;
+    box-sizing: border-box;
+  }
+  .ft-FlatDatePicker__monthCompo {
+    width: 45%;
+    float: left;
+    box-sizing: border-box;
+  }
+  .ft-FlatDatePicker__dayCompo {
+    width: 45%;
+    float: left;
+    box-sizing: border-box;
+  }
+}
+
+.ft-FlatDatePicker_credit {
+  @include clearfix();
+  .ft-FlatDatePicker__yearCompo {
+    width: 40%;
+    float: left;
+  }
+  .ft-FlatDatePicker__monthCompo {
+    width: 60%;
+    float: left;
+  }
+  .ft-FlatDatePicker__option {
+    &_year {
+      width: 31%;
+    }
+  }
+}
+
+.ft-FlatRangePicker {
+  display: block;
+  width: 320px;
+
+  &__display {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    margin-bottom: 7px;
+  }
+  &__dsSeparator {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  &__dsCompo {
+    @include btn-animation();
+    flex-basis: 100%;
+    flex-shrink: 1;
+    height: 26px;
+    border-radius: $border-radius;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    &.is-active {
+      color: #333;
+      background-color: #ededed;
+      border: 2px solid $active-bd-color;
+    }
+  }
+  &_ymd {
+    width: 460px;
+  }
+  &_ymd2 {
+    width: 460px;
+  }
+
+  .ft-FlatDatePicker {
+      width: 100%;
+  }
+}
