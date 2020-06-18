@@ -1,5 +1,5 @@
 {
-  "name": "@feat/flat-datepicker",
+  "name": "@featui/flat-datepicker",
   "version": "0.1.0",
   "description": "Flat datepicker build with moment and react",
   "main": "dist/index.js",
