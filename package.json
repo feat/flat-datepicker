@@ -15,9 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://172.16.9.108/fe-dev/flat-datepicker.git"
+    "url": "https://github.com/feat/flat-datepicker.git"
   },
-  "keywords": [],
+  "keywords": [ "react", "datepicker" ],
   "author": "feat",
   "license": "MIT",
   "devDependencies": {
