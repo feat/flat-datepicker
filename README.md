@@ -2,7 +2,9 @@
 
 一个扁平化的日期选择器。组件将用户设置日期时需要选择的元素（年、月、日、时、分）扁平化地展示出来，让用户快速选择日期，而不要来回切换“年月”等时间选择视图
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/feat/flat-datepicker/master/screenshot.png)
+
+使用示例：[Storybook - FlatDatepicker](https://feat.github.io/flat-datepicker/)
 
 ## 安装与使用
 
