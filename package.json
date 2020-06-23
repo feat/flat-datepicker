@@ -9,6 +9,7 @@
   "style": "dist/flat-datepicker.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-storybook": "storybook-to-ghpages",
     "build": "rollup --config",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -17,7 +18,10 @@
     "type": "git",
     "url": "https://github.com/feat/flat-datepicker.git"
   },
-  "keywords": [ "react", "datepicker" ],
+  "keywords": [
+    "react",
+    "datepicker"
+  ],
   "author": "feat",
   "license": "MIT",
   "devDependencies": {
@@ -31,6 +35,7 @@
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "babel-loader": "^8.1.0",
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
