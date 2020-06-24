@@ -11,13 +11,17 @@
 安装
 
 ```
-npm install @feat/flat-datepicker
+npm install @featui/flat-datepicker
 ```
 
 调用
 
 ```
-import { FlatDatePicker } from '@feat/flat-datepicker'
+import { FlatDatePicker } from '@featui/flat-datepicker'
+
+// import '@featui/flat-datepicker/dist/flat-datepicker.min.css'
+
+// import '@featui/flat-datepicker/src/style/index.scss'
 
 function Example() {
   return (
